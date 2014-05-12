@@ -1,3 +1,37 @@
 <% provide(:title, 'Sign Up') %>
-<h1>Sign Up</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<!--<h1>Sign Up</h1>-->
+
+
+<div class="container">      
+<div class="panel panel-default panel-signup">
+  <div class="panel-heading">Sign Up</div>
+  <div class="panel-body">
+
+  <%= bootstrap_form_for(@user) do |f| %>
+    <%= f.text_field :name %>
+    <%= f.email_field :email %>
+    <%= f.password_field :password %>
+    <%= f.password_field :password_confirmation %>
+    <%= f.submit "Create my account", class: "btn btn-primary btn-block" %>
+  <% end %>
+
+<!--
+    <%= form_for(@user, html: {class: 'form-signup'}) do |f| %>
+		<%= render 'shared/error_messages' %>
+      
+      <%= f.text_field :name, {class: 'form-control',placeholder: 'Name', autofocus: true, type: 'name'}%>
+      
+      <%= f.text_field :email, {class: 'form-control', placeholder: 'Email Address',type: 'email'}%>
+
+      
+      <%= f.password_field :password, {class: 'form-control', placeholder: 'Password'} %>
+
+      
+      <%= f.password_field :password_confirmation, {class: 'form-control', placeholder: 'Confirmation'} %>
+
+      <%= f.submit "Create my account", class: "btn btn-lg btn-primary btn-block" %>
+    <% end %>
+  -->
+    </div>
+</div>
+</div>

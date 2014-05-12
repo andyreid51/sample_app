@@ -1,9 +1,35 @@
-@import "bootstrap";
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
 $grayLight: #999;
 $grayDarker: #222;
+
+//@mixin box_sizing {
+  //-moz-box-sizing: border-box;
+  //-webkit-box-sizing: border-box;
+  //box-sizing: border-box;
+//}
+
+@import "bootswatch-scss/spacelab/variables";
+
+// Then bootstrap itself
+@import "bootstrap";
+
+@import "bootswatch-scss/spacelab/bootswatch";
+
+
+/* mixins, variables, etc. */
+
+//$grayMediumLight: #eaeaea;
+//$grayLight: #999;
+//$grayDarker: #222;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 
 /* universal */
 
@@ -107,4 +133,115 @@ footer {
       margin-left: 10px;
     }
   }
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* sidebar */
+
+aside {
+  section {
+    padding: 10px 0;
+    border-top: 1px solid $gray-lighter;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+/* forms */
+.panel-signup{
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.form-signup {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signup .form-signup-heading,
+.form-signup .checkbox {
+  margin-bottom: 10px;
+}
+.form-signup .checkbox {
+  font-weight: normal;
+}
+.form-signup .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signup .form-control:focus {
+  z-index: 2;
+}
+
+.form-signup input[type="Name"] {
+  margin-bottom: 15px; /* was -1 */
+  /*border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;*/
+}
+
+.form-signup input[type="email"] {
+  margin-bottom: 15px;
+  /*border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;*/
+}
+
+.form-signup input[type="password"] {
+  margin-bottom: 15px;
+  /*border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;*/
+}
+.form-signup input[type="confirmation"] {
+  margin-bottom: 10px;
+  /*border-top-right-radius: 0;
+  border-top-left-radius: 0;*/
+}
+
+#error_explanation {
+  /*color: #f00;*/
+  ul {
+    list-style: none;
+    margin: 0 0 0px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .has-error;
 }
