@@ -1,0 +1,16 @@
+<% provide(:title, "Sign in") %>
+
+<div class="container">
+	<div class="panel panel-default panel-signup">
+		<div class="panel-heading">Sign in</div>
+		<div class="panel-body">
+			<%= bootstrap_form_for(:session, url: sessions_path) do |f| %>
+				<%= f.email_field :email, prepend: content_tag(:span, '' ,class: "glyphicon glyphicon-envelope") %>
+				<%= f.password_field :password, prepend: content_tag(:span, '' ,class: "glyphicon glyphicon-lock") %>
+				<%= f.submit "Sign in", class: "btn btn-primary btn-block" %>
+			<% end %>
+
+		</div>
+	</div>
+	<p>New user? <%= link_to "Sign up now!", signup_path %></p>	
+</div>	

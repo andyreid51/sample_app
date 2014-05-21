@@ -1,17 +1,16 @@
 <% provide(:title, 'Sign Up') %>
 <!--<h1>Sign Up</h1>-->
 
-
 <div class="container">      
 <div class="panel panel-default panel-signup">
-  <div class="panel-heading">Sign Up</div>
+  <div class="panel-heading">Sign up</div>
   <div class="panel-body">
 
   <%= bootstrap_form_for(@user) do |f| %>
-    <%= f.text_field :name %>
-    <%= f.email_field :email %>
-    <%= f.password_field :password %>
-    <%= f.password_field :password_confirmation %>
+    <%= f.text_field :name, prepend: content_tag(:span, '' ,class: "glyphicon glyphicon-user") %>
+    <%= f.email_field :email, prepend: content_tag(:span, '' ,class: "glyphicon glyphicon-envelope") %>
+    <%= f.password_field :password, prepend: content_tag(:span, '' ,class: "glyphicon glyphicon-lock") %>
+    <%= f.password_field :password_confirmation, prepend: content_tag(:span, '' ,class: "glyphicon glyphicon-repeat") %>
     <%= f.submit "Create my account", class: "btn btn-primary btn-block" %>
   <% end %>
 

@@ -18,11 +18,13 @@ $grayDarker: #222;
 @import "bootswatch-scss/spacelab/bootswatch";
 
 
+
 /* mixins, variables, etc. */
 
 //$grayMediumLight: #eaeaea;
 //$grayLight: #999;
 //$grayDarker: #222;
+
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -258,3 +260,27 @@ aside {
     padding: 10px 12px;
     pointer-events: none;
 }
+
+/* dropdown */
+.dropdown-menu:before {
+  position: absolute;
+  top: -7px;
+  right: 9px;
+  display: inline-block;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #ccc;
+  border-left: 7px solid transparent;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  content: '';
+}
+
+.dropdown-menu:after {
+  position: absolute;
+  top: -6px;
+  right: 10px;
+  display: inline-block;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #ffffff;
+  border-left: 6px solid transparent;
+  content: '';
+} 
