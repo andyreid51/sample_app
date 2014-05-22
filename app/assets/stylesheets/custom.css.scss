@@ -12,12 +12,14 @@ $grayDarker: #222;
 
 @import "bootswatch-scss/spacelab/variables";
 
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
+
 // Then bootstrap itself
 @import "bootstrap";
 
 @import "bootswatch-scss/spacelab/bootswatch";
 
-@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
+//@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
 
 /* mixins, variables, etc. */
 
