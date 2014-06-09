@@ -13,6 +13,9 @@ gem 'bootstrap-will_paginate', '0.0.9'
 gem 'bootswatch-rails'
 gem 'rails-assets-bootswatch-scss'
 gem 'bootstrap_form'
+gem 'font-awesome-sass'
+gem 'jquery-easing-rails'
+
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'

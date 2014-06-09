@@ -10,6 +10,9 @@ $grayDarker: #222;
   //box-sizing: border-box;
 //}
 
+@import "font-awesome";
+$baseFontFamily: 'FontAwesome';
+
 @import "bootswatch-scss/spacelab/variables";
 
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
@@ -34,6 +37,33 @@ $grayDarker: #222;
   box-sizing: border-box;
 }
 
+/*boostrap template css */
+
+/*
+ * Sidebar
+ */
+
+
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+/* END of bootstrap template css */
+
 
 /* universal */
 
@@ -42,7 +72,7 @@ html {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 50px;
 }
 
 section {
@@ -61,6 +91,10 @@ textarea {
   margin-bottom: 10px;
 }
 /* Main marketing message and sign up button */
+.home-container {
+  padding-top: 15px;
+}
+
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
@@ -111,6 +145,12 @@ p {
     color: white;
     text-decoration: none;
   }
+}
+
+/* dropdown */
+
+.dropdown-menu i {
+  margin-right: 12px;
 }
 
 /* footer */
@@ -180,6 +220,10 @@ aside {
 }
 
 /* forms */
+.help-block{
+  font-size: 10px;
+}
+
 .panel-signup{
   max-width: 360px;
   margin: 0 auto;
@@ -188,10 +232,11 @@ aside {
 .alert-signup{
   max-width: 360px;
   margin: 0 auto;
+  margin-bottom: 10px;
 }
 
 .alert-container{
-  padding: 15px
+  
 }
 
 .form-signup {
@@ -295,3 +340,39 @@ aside {
   border-left: 6px solid transparent;
   content: '';
 } 
+
+/* sidebar */
+.panel-heading .accordion-toggle:after {
+    /* symbol for "opening" panels */
+    font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+    content: "\e114";    /* adjust as needed, taken from bootstrap.css */
+    float: right;        /* adjust as needed */
+    color: grey;         /* adjust as needed */
+    font-size: 0.5em;
+}
+.panel-heading .accordion-toggle.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\e080";    /* adjust as needed, taken from bootstrap.css */
+    font-size: 0.5em;
+}
+
+.panel-group .panel + .panel {
+  margin-top: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.panel-group .panel {
+  margin-top: 0px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.panel-body-menu {
+  padding: 0px
+}
+

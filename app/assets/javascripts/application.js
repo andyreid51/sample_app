@@ -25,5 +25,6 @@
 //= require bootstrap/modal
 //= require bootstrap/tooltip
 //= require bootstrap/popover
+//= require jquery.easing
 //= require turbolinks
 //= require_tree .
