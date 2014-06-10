@@ -15,6 +15,7 @@ gem 'rails-assets-bootswatch-scss'
 gem 'bootstrap_form'
 gem 'font-awesome-sass'
 gem 'jquery-easing-rails'
+gem 'sprockets_better_errors'
 
 
 group :development, :test do
