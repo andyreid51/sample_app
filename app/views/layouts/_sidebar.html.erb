@@ -41,15 +41,14 @@
       </a>
       <ul>
         <li>
-          <a href="https://github.com/onokumus/metisMenu">
-            <span class="sidebar-nav-item-icon fa fa-users"></span>
-            Show All
-          </a>
+          <%= link_to users_path do %>
+            <i class="sidebar-nav-item-icon fa fa-user"></i>All Users
+          <% end %>
         </li>
         <li>
           <a href="https://github.com/onokumus/metisMenu">
             <span class="sidebar-nav-item-icon fa fa-plus"></span>
-            New
+            New User
           </a>
         </li>
         <li>

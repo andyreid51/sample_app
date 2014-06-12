@@ -21,12 +21,12 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
               <ul class="dropdown-menu pull-right">
                 <li><%= link_to current_user do %>
-                  <i class="fa fa-user"></i>Profile
-                  <% end %>
+                      <i class="fa fa-user"></i>Profile
+                    <% end %>
                 </li>
-                <li><%= link_to '#' do %>
-                  <i class="fa fa-cog"></i>Settings
-                  <% end %>
+                <li><%= link_to edit_user_path(current_user) do %>
+                      <i class="fa fa-cog"></i>Settings
+                    <% end %>
                 </li>
                 <li class="divider"></li>
                 <li>
