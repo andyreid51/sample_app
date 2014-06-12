@@ -16,3 +16,11 @@ $(function() {
         }
     })
 })
+
+$(document).ready(function() {
+    $('#users').dataTable();
+} );
+
+$('.datatable').dataTable({
+  "sPaginationType": "bootstrap"
+});
