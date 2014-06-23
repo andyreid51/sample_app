@@ -1,36 +1,24 @@
 <% provide(:title, 'Sign Up') %>
-<!--<h1>Sign Up</h1>-->
-
-<div class="container">      
-<div class="panel panel-default panel-signup">
-  <div class="panel-heading">Sign up</div>
-  <div class="panel-body">
-
-  <%= bootstrap_form_for(@user) do |f| %>
-    <%= f.text_field :name, prepend: content_tag(:span, '' ,class: "glyphicon glyphicon-user") %>
-    <%= f.email_field :email, prepend: content_tag(:span, '' ,class: "glyphicon glyphicon-envelope") %>
-    <%= f.password_field :password, prepend: content_tag(:span, '' ,class: "glyphicon glyphicon-lock") %>
-    <%= f.password_field :password_confirmation, prepend: content_tag(:span, '' ,class: "glyphicon glyphicon-repeat") %>
-    <%= f.submit "Create my account", class: "btn btn-primary btn-block" %>
-  <% end %>
-
-<!--
-    <%= form_for(@user, html: {class: 'form-signup'}) do |f| %>
-		<%= render 'shared/error_messages' %>
-      
-      <%= f.text_field :name, {class: 'form-control',placeholder: 'Name', autofocus: true, type: 'name'}%>
-      
-      <%= f.text_field :email, {class: 'form-control', placeholder: 'Email Address',type: 'email'}%>
-
-      
-      <%= f.password_field :password, {class: 'form-control', placeholder: 'Password'} %>
-
-      
-      <%= f.password_field :password_confirmation, {class: 'form-control', placeholder: 'Confirmation'} %>
-
-      <%= f.submit "Create my account", class: "btn btn-lg btn-primary btn-block" %>
-    <% end %>
-  -->
-    </div>
+<div class="page-header">
+  <h3><i class="fa fa-pencil-square-o"></i> Create New User</h3>
 </div>
-</div>
+
+<div class="row">
+    <div class="col-lg-6">
+      <div class="panel panel-default">
+        <div class="panel-body">        
+        <%= bootstrap_form_for(@user) do |f| %>
+          <%= f.text_field :name %>
+          <%= f.email_field :email %>
+          <%= f.password_field :password %>
+          <%= f.password_field :password_confirmation %>
+          <%= f.select :role_id, Role.all.collect { |r| [r.name, r.id] } %>
+        </div>
+        <div class="panel-footer text-right">
+          <%= f.submit "Create User", class: "btn btn-primary" %>
+          <%= link_to "Cancel", users_path, class: "btn btn-danger" %>
+        </div>
+        <% end %>
+      </div>
+  </div>
+</div>  

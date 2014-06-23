@@ -18,6 +18,11 @@ module SessionsHelper
  	def current_user?(user)
     	user == current_user
   	end
+	
+	# this method is trying to test if the current user is admin
+  	def admin_user?
+		current_user.role.name == "admin"
+  	end
 
  	def current_user
 	    remember_token = User.digest(cookies[:remember_token])

@@ -8,14 +8,25 @@
 	<tr>
 		<th>User Name</th>
 		<th>Email</th>
+		<th>Role</th>		
+		<th>Edit</th>
+		<th>Delete</th>
 	</tr>
 </thead>
 <tbody>
 <% @users.each do |user| %>
 	<tr>
-		<td><%= link_to user.name, user %></td>
+		<td><%= user.name %></td>
 		<td><%= user.email %></td>
+		<td><%= user.role.name %></td>
+		<td><p><%= link_to edit_user_path(user), class: "btn btn-primary btn-xs"  do %><i class="fa fa-pencil-square-o"></i><% end %></p></td>
+		<td>
+		<% if !current_user?(user) %>
+			<p><%= link_to user, method: :delete, data: { confirm: "Please confirm you want to delete " + user.name},
+				  class: "btn btn-danger btn-xs" do %>
+				<i class="fa fa-trash-o"></i><% end %></p>
+		<% end %>
+		</td>
 	</tr>
 <% end %>
-</tbody>
-</table>
+
