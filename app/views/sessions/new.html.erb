@@ -6,7 +6,7 @@
 		<div class="panel-body">
 			<%= bootstrap_form_for(:session, url: sessions_path) do |f| %>
 				<%= f.email_field :email, prepend: content_tag(:i, '' ,class: "fa fa-envelope-o") %>
-				<%= f.password_field :password, prepend: content_tag(:i, '' ,class: "fa fa-lock") %>
+				<%= f.password_field :password, prepend: content_tag(:i, '' ,class: "fa fa-lock lock-padding") %>
 				<%= f.submit "Sign in", class: "btn btn-primary btn-block" %>
 			<% end %>
 			
