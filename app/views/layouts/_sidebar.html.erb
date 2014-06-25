@@ -1,34 +1,49 @@
+
 <nav class="sidebar-nav">
+        <div class="center sidebar-user">
+      <strong><%= current_user.name.upcase %></strong><br>
+      <em>administrator</em>
+    </div>
   <ul id="side-menu">
+
     <li>
       <a href="#">
         <span class="sidebar-nav-item-icon fa fa-cube fa-lg"></span>
-        <span class="sidebar-nav-item">Container</span>
+        <span class="sidebar-nav-item">Container Log</span>
         <span class="fa arrow"></span>
       </a>
       <ul>
         <li>
           <a href="https://github.com/onokumus/metisMenu">
             <span class="sidebar-nav-item-icon fa fa-cubes"></span>
-            Show All
+            All Container Logs
           </a>
         </li>
         <li>
           <a href="https://github.com/onokumus/metisMenu">
-            <span class="sidebar-nav-item-icon fa fa-plus"></span>
-            New
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/onokumus/metisMenu/issues">
             <span class="sidebar-nav-item-icon fa fa-pencil-square-o"></span>
-            Update
+            New Container Log
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">
+        <span class="sidebar-nav-item-icon fa fa-user fa-lg"></span>
+        <span class="sidebar-nav-item">Customer</span>
+        <span class="fa arrow"></span>
+      </a>
+      <ul>
+        <li>
+          <a href="https://github.com/onokumus/metisMenu">
+            <span class="sidebar-nav-item-icon fa fa-users"></span>
+            All Customers
           </a>
         </li>
         <li>
-          <a href="https://github.com/onokumus/metisMenu/archive/gh-pages.zip">
-            <span class="sidebar-nav-item-icon fa fa-trash-o"></span>
-            Delete
+          <a href="https://github.com/onokumus/metisMenu">
+            <span class="sidebar-nav-item-icon fa fa-pencil-square-o"></span>
+            New Customer
           </a>
         </li>
       </ul>
@@ -36,7 +51,7 @@
     <li>
       <a href="#">
         <span class="sidebar-nav-item-icon fa fa-truck fa-lg"></span>
-        <span class="sidebar-nav-item">Carriers</span>
+        <span class="sidebar-nav-item">Carrier</span>
         <span class="fa arrow"></span>
       </a>
       <ul>
@@ -48,43 +63,74 @@
         </li>
         <li>
           <a href="https://github.com/onokumus/metisMenu">
-            <span class="sidebar-nav-item-icon fa fa-plus"></span>
-            New
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/onokumus/metisMenu/issues">
             <span class="sidebar-nav-item-icon fa fa-pencil-square-o"></span>
-            Update
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/onokumus/metisMenu/archive/gh-pages.zip">
-            <span class="sidebar-nav-item-icon fa fa-trash-o"></span>
-            Delete
+            New
           </a>
         </li>
       </ul>
     </li>
+    
     <!-- test to see if admin user to display this menu -->
     <% if admin_user? %>
     <!-- make this menu active (expanded) if in the users controller -->
     <li class="<%= 'active' if params[:controller] == 'users' %>">
       <a href="#">
-        <span class="sidebar-nav-item-icon fa fa-users fa-lg"></span>
+        <span class="sidebar-nav-item-icon fa fa-user fa-lg"></span>
         <span class="sidebar-nav-item">Users</span>
         <span class="fa arrow"></span>
       </a>
       <ul>
         <li>
           <%= link_to users_path do %>
-            <i class="sidebar-nav-item-icon fa fa-user"></i>All Users
+            <i class="sidebar-nav-item-icon fa fa-users"></i>All Users
           <% end %>
         </li>
         <li>
           <%= link_to signup_path do %>
              <i class="sidebar-nav-item-icon fa fa-pencil-square-o"></i>New User 
           <% end %>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">
+        <span class="sidebar-nav-item-icon fa fa-flag fa-lg"></span>
+        <span class="sidebar-nav-item">NPI Status</span>
+        <span class="fa arrow"></span>
+      </a>
+      <ul>
+        <li>
+          <a href="https://github.com/onokumus/metisMenu">
+            <span class="sidebar-nav-item-icon fa fa-flag"></span>
+            All NPI Status
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/onokumus/metisMenu">
+            <span class="sidebar-nav-item-icon fa fa-pencil-square-o"></span>
+            New NPI Status
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">
+        <span class="sidebar-nav-item-icon fa fa-comment-o fa-lg"></span>
+        <span class="sidebar-nav-item">Comment</span>
+        <span class="fa arrow"></span>
+      </a>
+      <ul>
+        <li>
+          <a href="https://github.com/onokumus/metisMenu">
+            <span class="sidebar-nav-item-icon fa fa-comments-o"></span>
+            All Comments
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/onokumus/metisMenu">
+            <span class="sidebar-nav-item-icon fa fa-pencil-square-o"></span>
+            New Comment
+          </a>
         </li>
       </ul>
     </li>

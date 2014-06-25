@@ -11,12 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140625081137) do
+ActiveRecord::Schema.define(version: 20140625102650) do
 
   create_table "carriers", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "contact_name"
+    t.string   "contact_email"
   end
 
   create_table "comments", force: true do |t|
