@@ -11,7 +11,62 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140619063753) do
+ActiveRecord::Schema.define(version: 20140625081137) do
+
+  create_table "carriers", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "comments", force: true do |t|
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "contacts", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.integer  "carrier_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "containers", force: true do |t|
+    t.string   "container_number"
+    t.datetime "date"
+    t.integer  "bay"
+    t.string   "door_orientation"
+    t.integer  "carrier_id"
+    t.boolean  "do_received"
+    t.string   "entry_number"
+    t.string   "ship_voyage"
+    t.integer  "npi_status_id"
+    t.boolean  "config_received"
+    t.string   "priority"
+    t.datetime "doc_date"
+    t.integer  "customer_id"
+    t.datetime "devan_date"
+    t.boolean  "mt_email_sent"
+    t.integer  "comments_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "customers", force: true do |t|
+    t.string   "acc_code"
+    t.string   "acc_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "npi_statuses", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "roles", force: true do |t|
     t.string   "name"
