@@ -10,9 +10,10 @@
         <%= bootstrap_form_for(@user) do |f| %>
           <%= f.text_field :name %>
           <%= f.email_field :email %>
+          <%= f.select :role_id, Role.all.collect { |r| [r.name, r.id] } %>
+          <%= f.text_field :job_title %>
           <%= f.password_field :password %>
           <%= f.password_field :password_confirmation %>
-          <%= f.select :role_id, Role.all.collect { |r| [r.name, r.id] } %>
         </div>
         <div class="panel-footer text-right">
           <%= f.submit "Create User", class: "btn btn-primary" %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140625102650) do
+ActiveRecord::Schema.define(version: 20140626080826) do
 
   create_table "carriers", force: true do |t|
     t.string   "name"
@@ -52,9 +52,10 @@ ActiveRecord::Schema.define(version: 20140625102650) do
     t.integer  "customer_id"
     t.datetime "devan_date"
     t.boolean  "mt_email_sent"
-    t.integer  "comments_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "text_comment"
+    t.integer  "comment_id"
   end
 
   create_table "customers", force: true do |t|
@@ -84,6 +85,7 @@ ActiveRecord::Schema.define(version: 20140625102650) do
     t.string   "password_digest"
     t.string   "remember_token"
     t.integer  "role_id"
+    t.string   "job_title"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

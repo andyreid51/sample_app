@@ -52,7 +52,7 @@ class UsersController < ApplicationController
     def user_params
       # might need to remove :role_id from this - see section 9.4.2
       # "Revisiting strong parameters"
-      params.require(:user).permit(:name, :email, :role_id, :password,
+      params.require(:user).permit(:name, :email, :job_title, :role_id, :password,
                                    :password_confirmation)
     end
 

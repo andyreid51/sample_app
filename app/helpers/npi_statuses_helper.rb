@@ -1,0 +1,2 @@
+module NpiStatusesHelper
+end

@@ -1,4 +1,10 @@
 SampleApp::Application.routes.draw do
+  get "comments/new"
+  get "customers/new"
+  get "npi_statuses/new"
+  get "contacts/new"
+  get "carriers/new"
+  get "containers/new"
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   root  'static_pages#home'

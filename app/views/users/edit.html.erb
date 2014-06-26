@@ -13,6 +13,7 @@
 				<% if admin_user? %>
 					<%= f.select :role_id, Role.all.collect { |r| [r.name, r.id] } %>
 				<% end %>
+				<%= f.text_field :job_title %>
     			<%= f.password_field :password %>
 				<%= f.password_field :password_confirmation %>
 			</div>
