@@ -1,0 +1,27 @@
+<% provide(:title, 'All customers') %>
+<div class="page-header">
+  <h3><i class="fa fa-users"></i> All customers</h3>
+</div>
+
+<table class="table table-striped" id="users">
+<thead>	
+	<tr>
+		<th>Account Code</th>
+		<th>Account Name</th>		
+		<th>Edit</th>
+		<th>Delete</th>
+	</tr>
+</thead>
+<tbody>
+<% @customers.each do |customer| %>
+	<tr>
+		<td><%= customer.acc_code %></td>
+		<td><%= customer.acc_name %></td>
+		<td><p><%= link_to edit_customer_path(customer), class: "btn btn-primary btn-xs"  do %><i class="fa fa-pencil-square-o"></i><% end %></p></td>
+		<td>
+			<p><%= link_to customer, method: :delete, data: { confirm: "Please confirm you want to delete " + customer.acc_name},
+				  class: "btn btn-danger btn-xs" do %>
+				<i class="fa fa-trash-o"></i><% end %></p>
+		</td>
+	</tr>
+<% end %>

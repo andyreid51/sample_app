@@ -27,7 +27,7 @@
         </li>
       </ul>
     </li>
-    <li>
+    <li class="<%= 'active' if params[:controller] == 'customers' %>">
       <a href="#">
         <span class="sidebar-nav-item-icon fa fa-user fa-lg"></span>
         <span class="sidebar-nav-item">Customer</span>
@@ -35,20 +35,18 @@
       </a>
       <ul>
         <li>
-          <a href="https://github.com/onokumus/metisMenu">
-            <span class="sidebar-nav-item-icon fa fa-users"></span>
-            All Customers
-          </a>
+          <%= link_to customers_path do %>
+            <i class="sidebar-nav-item-icon fa fa-users"></i>All Customers
+          <% end %>
         </li>
         <li>
-          <a href="https://github.com/onokumus/metisMenu">
-            <span class="sidebar-nav-item-icon fa fa-pencil-square-o"></span>
-            New Customer
-          </a>
+          <%= link_to customer_new_path do %>
+             <i class="sidebar-nav-item-icon fa fa-pencil-square-o"></i>New Customer 
+          <% end %>
         </li>
       </ul>
     </li>
-    <li>
+    <li class="<%= 'active' if params[:controller] == 'carriers' %>">
       <a href="#">
         <span class="sidebar-nav-item-icon fa fa-truck fa-lg"></span>
         <span class="sidebar-nav-item">Carrier</span>
@@ -56,16 +54,14 @@
       </a>
       <ul>
         <li>
-          <a href="https://github.com/onokumus/metisMenu">
-            <span class="sidebar-nav-item-icon fa fa-truck"></span>
-            Show All
-          </a>
+          <%= link_to carriers_path do %>
+            <i class="sidebar-nav-item-icon fa fa-truck"></i>All Carriers
+          <% end %>
         </li>
         <li>
-          <a href="https://github.com/onokumus/metisMenu">
-            <span class="sidebar-nav-item-icon fa fa-pencil-square-o"></span>
-            New
-          </a>
+          <%= link_to carrier_new_path do %>
+             <i class="sidebar-nav-item-icon fa fa-pencil-square-o"></i>New Carrier 
+          <% end %>
         </li>
       </ul>
     </li>
@@ -76,7 +72,7 @@
     <li class="<%= 'active' if params[:controller] == 'users' %>">
       <a href="#">
         <span class="sidebar-nav-item-icon fa fa-user fa-lg"></span>
-        <span class="sidebar-nav-item">Users</span>
+        <span class="sidebar-nav-item">User</span>
         <span class="fa arrow"></span>
       </a>
       <ul>
@@ -92,28 +88,26 @@
         </li>
       </ul>
     </li>
-    <li>
+    <li class="<%= 'active' if params[:controller] == 'npi_statuses' %>">
       <a href="#">
         <span class="sidebar-nav-item-icon fa fa-flag fa-lg"></span>
-        <span class="sidebar-nav-item">NPI Status</span>
+        <span class="sidebar-nav-item">MPI Status</span>
         <span class="fa arrow"></span>
       </a>
       <ul>
         <li>
-          <a href="https://github.com/onokumus/metisMenu">
-            <span class="sidebar-nav-item-icon fa fa-flag"></span>
-            All NPI Status
-          </a>
+          <%= link_to npi_statuses_path do %>
+            <i class="sidebar-nav-item-icon fa fa-flag"></i>All MPI statuses
+          <% end %>
         </li>
         <li>
-          <a href="https://github.com/onokumus/metisMenu">
-            <span class="sidebar-nav-item-icon fa fa-pencil-square-o"></span>
-            New NPI Status
-          </a>
+          <%= link_to npi_status_new_path do %>
+             <i class="sidebar-nav-item-icon fa fa-pencil-square-o"></i>New MPI Status 
+          <% end %>
         </li>
       </ul>
     </li>
-    <li>
+    <li class="<%= 'active' if params[:controller] == 'comments' %>">
       <a href="#">
         <span class="sidebar-nav-item-icon fa fa-comment-o fa-lg"></span>
         <span class="sidebar-nav-item">Comment</span>
@@ -121,16 +115,14 @@
       </a>
       <ul>
         <li>
-          <a href="https://github.com/onokumus/metisMenu">
-            <span class="sidebar-nav-item-icon fa fa-comments-o"></span>
-            All Comments
-          </a>
+          <%= link_to comments_path do %>
+            <i class="sidebar-nav-item-icon fa fa-users"></i>All Comments
+          <% end %>
         </li>
         <li>
-          <a href="https://github.com/onokumus/metisMenu">
-            <span class="sidebar-nav-item-icon fa fa-pencil-square-o"></span>
-            New Comment
-          </a>
+          <%= link_to comment_new_path do %>
+             <i class="sidebar-nav-item-icon fa fa-pencil-square-o"></i>New Comment 
+          <% end %>
         </li>
       </ul>
     </li>

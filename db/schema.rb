@@ -11,20 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140626080826) do
+ActiveRecord::Schema.define(version: 20140630101745) do
 
   create_table "carriers", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "contact_name"
-    t.string   "contact_email"
   end
 
   create_table "comments", force: true do |t|
-    t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "comment_description"
   end
 
   create_table "contacts", force: true do |t|
@@ -34,7 +32,10 @@ ActiveRecord::Schema.define(version: 20140626080826) do
     t.integer  "carrier_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "email_notification"
   end
+
+  add_index "contacts", ["email"], name: "index_contacts_on_email", unique: true
 
   create_table "containers", force: true do |t|
     t.string   "container_number"
@@ -64,6 +65,8 @@ ActiveRecord::Schema.define(version: 20140626080826) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "customers", ["acc_code"], name: "index_customers_on_acc_code", unique: true
 
   create_table "npi_statuses", force: true do |t|
     t.string   "name"

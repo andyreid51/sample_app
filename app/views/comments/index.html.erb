@@ -1,0 +1,25 @@
+<% provide(:title, 'All comments') %>
+<div class="page-header">
+  <h3><i class="fa fa-comments-o"></i> All comments</h3>
+</div>
+
+<table class="table table-striped" id="users">
+<thead>	
+	<tr>
+		<th>Comment Description</th>		
+		<th>Edit</th>
+		<th>Delete</th>
+	</tr>
+</thead>
+<tbody>
+<% @comments.each do |comment| %>
+	<tr>
+		<td><%= comment.comment_description %></td>
+		<td><p><%= link_to edit_comment_path(comment), class: "btn btn-primary btn-xs"  do %><i class="fa fa-pencil-square-o"></i><% end %></p></td>
+		<td>
+			<p><%= link_to comment, method: :delete, data: { confirm: "Please confirm you want to delete " + comment.comment_description},
+				  class: "btn btn-danger btn-xs" do %>
+				<i class="fa fa-trash-o"></i><% end %></p>
+		</td>
+	</tr>
+<% end %>

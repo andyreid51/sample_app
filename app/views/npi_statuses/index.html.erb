@@ -1,0 +1,25 @@
+<% provide(:title, 'All NPI statuses') %>
+<div class="page-header">
+  <h3><i class="fa fa-flag"></i> All MPI statuses</h3>
+</div>
+
+<table class="table table-striped" id="users">
+<thead>	
+	<tr>
+		<th>Name</th>		
+		<th>Edit</th>
+		<th>Delete</th>
+	</tr>
+</thead>
+<tbody>
+<% @npiStatuses.each do |npiStatus| %>
+	<tr>
+		<td><%= npiStatus.name %></td>
+		<td><p><%= link_to edit_npi_status_path(npiStatus), class: "btn btn-primary btn-xs"  do %><i class="fa fa-pencil-square-o"></i><% end %></p></td>
+		<td>
+			<p><%= link_to npiStatus, method: :delete, data: { confirm: "Please confirm you want to delete " + npiStatus.name},
+				  class: "btn btn-danger btn-xs" do %>
+				<i class="fa fa-trash-o"></i><% end %></p>
+		</td>
+	</tr>
+<% end %>

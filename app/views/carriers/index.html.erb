@@ -1,0 +1,29 @@
+<% provide(:title, 'All carriers') %>
+<div class="page-header">
+  <h3><i class="fa fa-truck"></i> All carriers</h3>
+</div>
+
+<table class="table table-striped" id="carriers">
+<thead>	
+	<tr>
+		<th>Carrier Name</th>
+		<th>Contacts</th>		
+		<th>Edit</th>
+		<th>Delete</th>
+	</tr>
+</thead>
+<tbody>
+<% @carriers.each do |carrier| %>
+	<tr>
+		<td><%= carrier.name %></td>
+		<td><p><%= link_to carrier, class: "btn btn-primary btn-xs"  do %><i class="fa fa-user"></i><% end %></p>
+		</td>
+		<td><p><%= link_to edit_carrier_path(carrier), class: "btn btn-primary btn-xs"  do %><i class="fa fa-pencil-square-o"></i><% end %></p>
+		</td>
+		<td>
+			<p><%= link_to carrier, method: :delete, data: { confirm: "Please confirm you want to delete " + carrier.name},
+				  class: "btn btn-danger btn-xs" do %>
+				<i class="fa fa-trash-o"></i><% end %></p>
+		</td>
+	</tr>
+<% end %>

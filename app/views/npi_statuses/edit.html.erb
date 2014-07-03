@@ -1,18 +1,18 @@
-<% provide(:title, 'Create Carrier') %>
+<% provide(:title, 'Edit MPI status') %>
 <div class="page-header">
-  <h3><i class="fa fa-truck"></i> Create New Carrier</h3>
+  <h3><i class="fa fa-flag"></i> Update MPI status</h3>
 </div>
 
 <div class="row">
     <div class="col-lg-6">
       <div class="panel panel-default">
         <div class="panel-body">        
-        <%= bootstrap_form_for(@carrier) do |f| %>
+        <%= bootstrap_form_for(@npiStatus) do |f| %>
           <%= f.text_field :name %>
         </div>
         <div class="panel-footer text-right">
-          <%= f.submit "Create Carrier", class: "btn btn-primary" %>
-          <%= link_to "Cancel", customers_path, class: "btn btn-danger" %>
+          <%= f.submit "Save changes", class: "btn btn-primary" %>
+          <%= link_to "Cancel", npi_statuses_path, class: "btn btn-danger" %>
         </div>
         <% end %>
       </div>

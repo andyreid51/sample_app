@@ -1,6 +1,6 @@
-<% provide(:title, 'Create Carrier') %>
+<% provide(:title, 'Edit carrier') %>
 <div class="page-header">
-  <h3><i class="fa fa-truck"></i> Create New Carrier</h3>
+  <h3><i class="fa fa-truck"></i> Update carrier</h3>
 </div>
 
 <div class="row">
@@ -11,8 +11,8 @@
           <%= f.text_field :name %>
         </div>
         <div class="panel-footer text-right">
-          <%= f.submit "Create Carrier", class: "btn btn-primary" %>
-          <%= link_to "Cancel", customers_path, class: "btn btn-danger" %>
+          <%= f.submit "Save changes", class: "btn btn-primary" %>
+          <%= link_to "Cancel", carriers_path, class: "btn btn-danger" %>
         </div>
         <% end %>
       </div>
