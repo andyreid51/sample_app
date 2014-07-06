@@ -3,7 +3,7 @@
   <h3><i class="fa fa-flag"></i> All MPI statuses</h3>
 </div>
 
-<table class="table table-striped" id="users">
+<table class="table table-striped table-bordered" id="users">
 <thead>	
 	<tr>
 		<th>Name</th>		
@@ -15,11 +15,11 @@
 <% @npiStatuses.each do |npiStatus| %>
 	<tr>
 		<td><%= npiStatus.name %></td>
-		<td><p><%= link_to edit_npi_status_path(npiStatus), class: "btn btn-primary btn-xs"  do %><i class="fa fa-pencil-square-o"></i><% end %></p></td>
-		<td>
-			<p><%= link_to npiStatus, method: :delete, data: { confirm: "Please confirm you want to delete " + npiStatus.name},
+		<td class="text-center"><%= link_to edit_npi_status_path(npiStatus), class: "btn btn-primary btn-xs"  do %><i class="fa fa-pencil-square-o"></i><% end %></td>
+		<td class="text-center">
+			<%= link_to npiStatus, method: :delete, data: { confirm: "Please confirm you want to delete " + npiStatus.name},
 				  class: "btn btn-danger btn-xs" do %>
-				<i class="fa fa-trash-o"></i><% end %></p>
+				<i class="fa fa-trash-o"></i><% end %>
 		</td>
 	</tr>
 <% end %>

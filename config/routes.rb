@@ -9,8 +9,10 @@ SampleApp::Application.routes.draw do
   resources :customers
   resources :comments
   resources :npi_statuses
-  resources :carriers
-  resources :contacts
+  #nested resource for contacts within carriers
+  resources :carriers do
+    resources :contacts
+  end
   resources :sessions, only: [:new, :create, :destroy]
   root  'static_pages#home'
   match '/signup',  to: 'users#new',            via: 'get'
@@ -23,7 +25,6 @@ SampleApp::Application.routes.draw do
   match '/comment_new',   to: 'comments#new',   via: 'get'
   match '/npi_status_new', to: 'npi_statuses#new',  via: 'get'
   match '/carrier_new', to: 'carriers#new',     via: 'get'  
-  match '/contact_new', to: 'contacts#new',     via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

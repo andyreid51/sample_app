@@ -6,7 +6,6 @@ class CarriersController < ApplicationController
 
   def show
 	@carrier = Carrier.find(params[:id])
-	@contacts = @carrier.contacts.all
   end
 
   def new
