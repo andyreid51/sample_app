@@ -2,6 +2,10 @@ namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
     #create some new users first one is admin
+    #add roles "admin" and "user" to roles table
+    Role.create!(name: "admin")
+    Role.create!(name: "user")
+
     User.create!(name: "Andy Reid",
                  email: "andyreid51@gmail.com",
                  password: "seed1974",
@@ -20,9 +24,7 @@ namespace :db do
                    job_title: "Storeman")
     end
     
-    #add roles "admin" and "user" to roles table
-    Role.create!(name: "admin")
-    Role.create!(name: "user")
+
 
     
   end
