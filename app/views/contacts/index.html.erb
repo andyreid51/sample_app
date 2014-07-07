@@ -1,10 +1,10 @@
 <% provide(:title, @carrier.name) %>
 <div class="page-header">
-	<h3><i class="fa fa-truck"></i> <%= @carrier.name %></h3>
+	<h3><i class="fa fa-truck"></i> <%= "#{@carrier.name} - Contacts" %></h3>
 </div>
 
-	<h4><i class="fa fa-users"></i> Contacts<%= link_to "New Contact", new_carrier_contact_path(@carrier), class: "btn btn-primary pull-right" %></h4><br>
-	
+	<%= link_to "New Contact", new_carrier_contact_path(@carrier), class: "btn btn-info" %><br>
+	<br>
 	<table class="table table-striped table-bordered" id="users">
 	<thead>	
 		<tr>

@@ -1,11 +1,14 @@
 namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
-    #create some new users first one is admin
+
+    #This needs to be done in the right order to ensure validation passes
+
     #add roles "admin" and "user" to roles table
     Role.create!(name: "admin")
     Role.create!(name: "user")
 
+    #create some new users first one is admin
     User.create!(name: "Andy Reid",
                  email: "andyreid51@gmail.com",
                  password: "seed1974",

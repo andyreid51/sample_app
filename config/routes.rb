@@ -4,7 +4,7 @@ SampleApp::Application.routes.draw do
   #get "npi_statuses/new"
   #get "contacts/new"
   #get "carriers/new"
-  get "containers/new"
+  #get "containers/new"
   resources :users
   resources :customers
   resources :comments
@@ -13,6 +13,7 @@ SampleApp::Application.routes.draw do
   resources :carriers do
     resources :contacts
   end
+  resources :containers
   resources :sessions, only: [:new, :create, :destroy]
   root  'static_pages#home'
   match '/signup',  to: 'users#new',            via: 'get'
@@ -24,7 +25,8 @@ SampleApp::Application.routes.draw do
   match '/customer_new',  to: 'customers#new',  via: 'get'
   match '/comment_new',   to: 'comments#new',   via: 'get'
   match '/npi_status_new', to: 'npi_statuses#new',  via: 'get'
-  match '/carrier_new', to: 'carriers#new',     via: 'get'  
+  match '/carrier_new', to: 'carriers#new',     via: 'get'
+  match '/container_new', to: 'containers#new', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

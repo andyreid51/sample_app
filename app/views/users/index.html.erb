@@ -8,6 +8,7 @@
 	<tr>
 		<th>User Name</th>
 		<th>Email</th>
+		<th>Job Title</th>
 		<th>Role</th>		
 		<th>Edit</th>
 		<th>Delete</th>
@@ -18,6 +19,7 @@
 	<tr>
 		<td><%= user.name %></td>
 		<td><%= user.email %></td>
+		<td><%= user.job_title %></td>
 		<td><%= user.role.name %></td>
 		<td class="text-center"><%= link_to edit_user_path(user), class: "btn btn-primary btn-xs"  do %><i class="fa fa-pencil-square-o"></i><% end %></td>
 		<td class="text-center">

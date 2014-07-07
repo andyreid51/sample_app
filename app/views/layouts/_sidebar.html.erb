@@ -6,7 +6,7 @@
     </div>
   <ul id="side-menu">
 
-    <li>
+    <li class="<%= 'active' if params[:controller] == 'containers' %>">
       <a href="#">
         <span class="sidebar-nav-item-icon fa fa-cube fa-lg"></span>
         <span class="sidebar-nav-item">Container Log</span>
@@ -14,16 +14,14 @@
       </a>
       <ul>
         <li>
-          <a href="https://github.com/onokumus/metisMenu">
-            <span class="sidebar-nav-item-icon fa fa-cubes"></span>
-            All Container Logs
-          </a>
+          <%= link_to containers_path do %>
+            <i class="sidebar-nav-item-icon fa fa-cubes"></i>All Containers
+          <% end %>
         </li>
         <li>
-          <a href="https://github.com/onokumus/metisMenu">
-            <span class="sidebar-nav-item-icon fa fa-pencil-square-o"></span>
-            New Container Log
-          </a>
+          <%= link_to container_new_path do %>
+             <i class="sidebar-nav-item-icon fa fa-pencil-square-o"></i>New Container Log 
+          <% end %>
         </li>
       </ul>
     </li>
