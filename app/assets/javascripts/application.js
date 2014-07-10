@@ -28,5 +28,11 @@
 //= require jquery.easing
 //= require dataTables/jquery.dataTables
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+//= require moment
+//= require moment/ru.js
+//= require moment/en-au.js
+//= require bootstrap-datetimepicker
+//= require locales/bootstrap-datetimepicker.ru.js
+//= require locales/bootstrap-datetimepicker.en-au.js
 //= require turbolinks
 //= require_tree .

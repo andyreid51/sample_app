@@ -10,13 +10,72 @@
         	<%= bootstrap_form_for(@container) do |f| %>       
 			<div class="row">
             <div class="col-md-6">
-				
+              <%= f.text_field :container_number %>
+      				<%= f.text_field :bay %>
+          		<%= f.text_field :entry_number %>
+          		<%= f.select :npi_status_id, NpiStatus.all.collect { |n| [n.name, n.id]} %>
+              <%= f.select :priority, options_for_select(["High", "Medium", "Low"]) %>
+              <%= f.select :customer_id, Customer.all.collect { |c| [c.acc_name, c.id]},
+                { include_blank: true, default: nil } %>
+              <div class="row">
+                <div class="col-md-6">
+                    <%= f.label :do_received do %>
+                      D.O. Received
+                      <%= f.check_box :do_received %>
+                    <% end %>
+                </div>
+                <div class="col-md-6">
+                    <%= f.label :config_received do %>
+                      Configuration Received
+                    <%= f.check_box :config_received %>
+                    <% end %>
+                </div>    
+              </div>
             </div>
-
-
             <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label" for="container_date">Date</label>
+                <div class='input-group date' id='datetimepicker10'>
+                  <input class="form-control" name="container[date]" type="text">
+                  <span class="input-group-addon"><span class="fa fa-calendar">
+                  </span>
+                  </span>
+                </div>  
+              </div>
+      				<%= f.select :door_orientation, options_for_select(["Doors Front", "Doors Rear"]) %>
+      				<%= f.select :carrier_id, Carrier.all.collect { |c| [c.name, c.id]},
+                { include_blank: true, default: nil } %>
+      				<%= f.text_field :ship_voyage %>
+
+                  <div class="form-group">
+                    <label class="control-label" for="container_doc_date">Document date</label>
+                    <div class='input-group date' id='datedevan'>
+                      <input class="form-control" name="container[doc_date]" type="text">
+                      <span class="input-group-addon"><span class="fa fa-calendar">
+                      </span>
+                      </span>
+                    </div>  
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="control-label" for="container_devan_date">Devan date</label>
+                    <div class='input-group date' id='datetimepicker1'>
+                      <input class="form-control" name="container[devan_date]" type="text">
+                      <span class="input-group-addon"><span class="fa fa-calendar">
+                      </span>
+                      </span>
+                    </div>  
+                  </div>
+
+              <%= f.select :comment_id, Comment.all.collect { |c| [c.comment_description, c.id]},
+                { include_blank: true, default: nil } %>
 
             </div>
+
+              <div class="col-md-12">
+                <%= f.text_area :text_comment %>
+              </div>
+
         </div> 
         </div>
          <div class="panel-footer text-right">

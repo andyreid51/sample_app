@@ -24,3 +24,39 @@ $(document).ready(function() {
 $('.datatable').dataTable({
   "sPaginationType": "bootstrap"
 });
+
+$(function () {
+    $('#datetimepicker10').datetimepicker({
+        language: 'en-au',
+        icons: {
+            time: "fa fa-clock-o",
+            date: "fa fa-calendar",
+            up: "fa fa-arrow-up",
+            down: "fa fa-arrow-down"
+        }
+    });
+});
+
+$(function () {
+    $('#datetimepicker1').datetimepicker({
+        language: 'en-au',
+        icons: {
+            time: "fa fa-clock-o",
+            date: "fa fa-calendar",
+            up: "fa fa-arrow-up",
+            down: "fa fa-arrow-down"
+        }
+    });
+});
+
+$(function () {
+    $('#datedevan').datetimepicker({
+        language: 'en-au',
+        icons: {
+            time: "fa fa-clock-o",
+            date: "fa fa-calendar",
+            up: "fa fa-arrow-up",
+            down: "fa fa-arrow-down"
+        }
+    });
+});
