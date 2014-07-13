@@ -42,7 +42,10 @@ class ContainersController < ApplicationController
 
   def empty
     @container = Container.find(params[:id])
-    flash[:success] = @container.container_number + " is now empty."
+    @container.update_attribute(:mt_email_sent, true)
+    ContactMailer.confirm_email(@container.carrier.contacts.find(2)).deliver
+    flash[:success] = @container.container_number + " is now empty.
+     A confirmation email has been sent."
     redirect_to containers_url
   end
 

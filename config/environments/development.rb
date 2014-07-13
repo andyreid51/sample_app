@@ -14,7 +14,8 @@ SampleApp::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  # Changed this to true, it is false by default
+  config.action_mailer.raise_delivery_errors = true
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -26,6 +27,17 @@ SampleApp::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  #
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'example.com',
+    user_name:            'andyreid51@gmail.com',
+    password:             '1974seed',
+    authentication:       'plain',
+    enable_starttls_auto: true  }
 
   #required by sprockets_better_errors gem
   #config.assets.raise_production_errors = true
