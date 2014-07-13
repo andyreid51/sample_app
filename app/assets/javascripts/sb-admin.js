@@ -17,6 +17,7 @@ $(function() {
     })
 })
 
+//Datatable script
 $(document).ready(function() {
     $('#users').dataTable();
 } );
@@ -25,6 +26,8 @@ $('.datatable').dataTable({
   "sPaginationType": "bootstrap"
 });
 
+
+//datetimepicker script
 $(function () {
     $('#datetimepicker10').datetimepicker({
         language: 'en-au',

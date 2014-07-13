@@ -1,5 +1,9 @@
 class ContainersController < ApplicationController
 
+  def index
+    @containers = Container.all
+  end
+
   def new
   	@container = Container.new
   end
@@ -13,6 +17,33 @@ class ContainersController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def edit
+    @container = Container.find(params[:id])
+  end
+
+  def update
+    @container = Container.find(params[:id])
+    if @container.update_attributes(container_params)
+      flash[:success] = @container.container_number + " updated"
+      redirect_to containers_url
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @container = Container.find(params[:id])
+    Container.find(params[:id]).destroy
+    flash[:warning] = @container.container_number + " has been deleted."
+    redirect_to containers_url
+  end
+
+  def empty
+    @container = Container.find(params[:id])
+    flash[:success] = @container.container_number + " is now empty."
+    redirect_to containers_url
   end
 
   private

@@ -1,6 +1,6 @@
-<% provide(:title, 'New container') %>
+<% provide(:title, 'Edit container') %>
 <div class="page-header">
-  <h3><i class="fa fa-pencil-square-o"></i> Create New Container</h3>
+  <h3><i class="fa fa-cube"></i> Edit container</h3>
 </div>
 
 <div class="row">
@@ -8,15 +8,15 @@
       <div class="panel panel-default">
         <div class="panel-body">
         	<%= bootstrap_form_for(@container) do |f| %>       
-          <div class="row">
+			<div class="row">
             <div class="col-md-6">
               <%= f.text_field :container_number %>
               <%= f.select :customer_id, Customer.all.collect { |c| [c.acc_name, c.id]},
                 { include_blank: true, default: nil } %>
               <%= f.select :priority, options_for_select(["High", "Medium", "Low"]) %>  
-              <%= f.text_field :bay %>
-              <%= f.text_field :entry_number %>
-              <%= f.select :npi_status_id, NpiStatus.all.collect { |n| [n.name, n.id]} %>
+      				<%= f.text_field :bay %>
+          		<%= f.text_field :entry_number %>
+          		<%= f.select :npi_status_id, NpiStatus.all.collect { |n| [n.name, n.id]} %>
               <div class="row">
                 <div class="col-md-6">
                     <%= f.label :do_received do %>
@@ -37,7 +37,7 @@
               <%= f.select :carrier_id, Carrier.all.collect { |c| [c.name, c.id]},
                 { include_blank: true, default: nil } %>
               <%= f.text_field :ship_voyage %>
-              <%= f.select :door_orientation, options_for_select(["Doors Front", "Doors Rear"]) %>
+      				<%= f.select :door_orientation, options_for_select(["Doors Front", "Doors Rear"]) %>
               <%= f.date_field :doc_date %>
               <%= f.date_field :devan_date %>
               <%= f.select :comment_id, Comment.all.collect { |c| [c.comment_description, c.id]},
@@ -49,7 +49,7 @@
         </div> <!-- row -->
         </div>
          <div class="panel-footer text-right">
-          <%= f.submit "Create Container Log", class: "btn btn-primary" %>
+          <%= f.submit "Update Container Log", class: "btn btn-primary" %>
           <%= link_to "Cancel", users_path, class: "btn btn-danger" %>
         </div>
         <% end %>

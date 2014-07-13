@@ -1,0 +1,34 @@
+<% provide(:title, 'All containers') %>
+<div class="page-header">
+  <h3><i class="fa fa-cube"></i> All containers</h3>
+</div>
+
+<table class="table table-striped table-bordered" id="users">
+<thead>	
+	<tr>
+		<th>Container Num</th>
+		<th>Date</th>
+		<th>Customer</th>		
+		<th>Carrier</th>
+		<th>Priority</th>
+		<th>Empty</th>
+		<th>Edit</th>
+		<th>Delete</th>
+	</tr>
+</thead>
+<tbody>
+	<% @containers.each do |container| %>
+		<tr class="<%= 'danger' if container.priority == 'High' %>">
+			<td><%= container.container_number %></td>
+			<td><%= container.date.strftime("%d/%m/%Y") %></td>
+			<td><%= container.customer.acc_name %></td>
+			<td><%= container.carrier.name %></td>
+			<td><%= container.priority %></td>
+			<td class="text-center"><%= link_to empty_container_path(container), method: :put, class: "btn btn-primary btn-xs"  do %><i class="fa fa-external-link"></i><% end %></td>
+			<td class="text-center"><%= link_to edit_container_path(container), class: "btn btn-primary btn-xs"  do %><i class="fa fa-pencil-square-o"></i><% end %></td>
+			<td class="text-center"><%= link_to container, method: :delete, data: { confirm: "Please confirm you want to delete " + container.container_number},
+					  class: "btn btn-danger btn-xs" do %>
+					<i class="fa fa-trash-o"></i><% end %></td>
+		</tr>
+	<% end %>
+</table>
