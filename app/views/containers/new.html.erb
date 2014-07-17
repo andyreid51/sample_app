@@ -33,13 +33,13 @@
               </div>
             </div>
             <div class="col-md-6">
-              <%= f.date_field :date %>
+              <%= f.date_field :date, placeholder: "dd/mm/yyyy" %>
               <%= f.select :carrier_id, Carrier.all.collect { |c| [c.name, c.id]},
                 { include_blank: true, default: nil } %>
               <%= f.text_field :ship_voyage %>
               <%= f.select :door_orientation, options_for_select(["Doors Front", "Doors Rear"]) %>
-              <%= f.date_field :doc_date %>
-              <%= f.date_field :devan_date %>
+              <%= f.date_field :doc_date, placeholder: "dd/mm/yyyy" %>
+              <%= f.date_field :devan_date, placeholder: "dd/mm/yyyy" %>
               <%= f.select :comment_id, Comment.all.collect { |c| [c.comment_description, c.id]},
                 { include_blank: true, default: nil } %>
             </div>

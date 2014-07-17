@@ -36,4 +36,6 @@
 //= require locales/bootstrap-datetimepicker.ru.js
 //= require locales/bootstrap-datetimepicker.en-au.js
 //= require turbolinks
+//= require webshims/extras/modernizr-custom
+//= require webshims/polyfiller
 //= require_tree .
