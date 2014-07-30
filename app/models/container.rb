@@ -4,6 +4,8 @@ class Container < ActiveRecord::Base
 	belongs_to :customer
 	belongs_to :comment
 
+	default_scope -> { order('date DESC') }
+
 	# Validation
 	VALID_CONTAINER_REGEX = /[A-Z]{4}[0-9]{7}/
 	validates :container_number, presence: true, format: {with: VALID_CONTAINER_REGEX,

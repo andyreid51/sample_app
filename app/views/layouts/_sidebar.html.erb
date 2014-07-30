@@ -44,7 +44,8 @@
         </li>
       </ul>
     </li>
-    <li class="<%= 'active' if params[:controller] == 'carriers' %>">
+    <li class="<%= 'active' if params[:controller] == 'carriers' or 
+      params[:controller] == 'contacts' %>">
       <a href="#">
         <span class="sidebar-nav-item-icon fa fa-truck fa-lg"></span>
         <span class="sidebar-nav-item">Carrier</span>
