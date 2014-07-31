@@ -4,10 +4,10 @@
 </div>
 
 <div class="row">
-    <div class="col-lg-6">
+  <div class="col-lg-6">
+    <%= bootstrap_form_for(@customer) do |f| %>
       <div class="panel panel-default">
         <div class="panel-body">        
-        <%= bootstrap_form_for(@customer) do |f| %>
           <%= f.text_field :acc_code %>
           <%= f.text_field :acc_name %>
         </div>
@@ -15,7 +15,7 @@
           <%= f.submit "Save changes", class: "btn btn-primary" %>
           <%= link_to "Cancel", customers_path, class: "btn btn-danger" %>
         </div>
-        <% end %>
       </div>
+    <% end %>      
   </div>
 </div>  

@@ -5,22 +5,23 @@
 
 <div class="row">
     <div class="col-lg-6">
-      <div class="panel panel-default">
-        <div class="panel-body">        
-        <%= bootstrap_form_for([@carrier, @contact]) do |f| %>
-          <%= f.text_field :first_name %>
-          <%= f.text_field :last_name %>
-          <%= f.email_field :email %>
-          <%= f.label :email_notification do %>
-            Send email notification
-            <%= f.check_box :email_notification %>
-          <% end %>
+      <%= bootstrap_form_for([@carrier, @contact]) do |f| %>
+        <div class="panel panel-default">
+          <div class="panel-body">        
+
+            <%= f.text_field :first_name %>
+            <%= f.text_field :last_name %>
+            <%= f.email_field :email %>
+            <%= f.label :email_notification do %>
+              Send email notification
+              <%= f.check_box :email_notification %>
+            <% end %>
+          </div>
+          <div class="panel-footer text-right">
+            <%= f.submit "Create Contact", class: "btn btn-primary" %>
+            <%= link_to "Cancel", carrier_contacts_path(@carrier), class: "btn btn-danger" %>
+          </div>
         </div>
-        <div class="panel-footer text-right">
-          <%= f.submit "Create Contact", class: "btn btn-primary" %>
-          <%= link_to "Cancel", carrier_contacts_path(@carrier), class: "btn btn-danger" %>
-        </div>
-        <% end %>
-      </div>
+      <% end %>      
   </div>
 </div>  

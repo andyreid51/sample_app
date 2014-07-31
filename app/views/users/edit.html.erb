@@ -5,23 +5,23 @@
 
 <div class="row">
     <div class="col-lg-6">
-    	<div class="panel panel-default">
-			<div class="panel-body">
-			<%= bootstrap_form_for(@user) do |f| %>
-				<%= f.text_field :name %>
-				<%= f.email_field :email %>
-				<% if admin_user? %>
-					<%= f.select :role_id, Role.all.collect { |r| [r.name, r.id] } %>
-				<% end %>
-				<%= f.text_field :job_title %>
-    			<%= f.password_field :password %>
-				<%= f.password_field :password_confirmation %>
+		<%= bootstrap_form_for(@user) do |f| %>
+	    	<div class="panel panel-default">
+				<div class="panel-body">
+					<%= f.text_field :name %>
+					<%= f.email_field :email %>
+					<% if admin_user? %>
+						<%= f.select :role_id, Role.all.collect { |r| [r.name, r.id] } %>
+					<% end %>
+					<%= f.text_field :job_title %>
+	    			<%= f.password_field :password %>
+					<%= f.password_field :password_confirmation %>
+				</div>
+				<div class="panel-footer text-right">
+					<%= f.submit "Save changes", class: "btn btn-primary" %>
+					<%= link_to "Cancel", users_path, class: "btn btn-danger" %>
+				</div>
 			</div>
-			<div class="panel-footer text-right">
-				<%= f.submit "Save changes", class: "btn btn-primary" %>
-				<%= link_to "Cancel", users_path, class: "btn btn-danger" %>
-			</div>
-			<% end %>
-		</div>
+		<% end %>
 	</div>
 </div>	

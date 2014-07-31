@@ -4,10 +4,10 @@
 </div>
 
 <div class="row">
-    <div class="col-lg-12">
+  <div class="col-lg-12">
+    <%= bootstrap_form_for(@container) do |f| %>
       <div class="panel panel-default">
         <div class="panel-body">
-        	<%= bootstrap_form_for(@container) do |f| %>       
           <div class="row">
             <div class="col-md-6">
               <%= f.text_field :container_number %>
@@ -19,16 +19,16 @@
               <%= f.select :npi_status_id, NpiStatus.all.collect { |n| [n.name, n.id]} %>
               <div class="row">
                 <div class="col-md-6">
-                    <%= f.label :do_received do %>
-                      D.O. Received
-                      <%= f.check_box :do_received %>
-                    <% end %>
+                  <%= f.label :do_received do %>
+                    D.O. Received
+                    <%= f.check_box :do_received %>
+                  <% end %>
                 </div>
                 <div class="col-md-6">
-                    <%= f.label :config_received do %>
-                      Configuration Received
-                    <%= f.check_box :config_received %>
-                    <% end %>
+                  <%= f.label :config_received do %>
+                    Configuration Received
+                  <%= f.check_box :config_received %>
+                  <% end %>
                 </div>    
               </div>
             </div>
@@ -43,16 +43,16 @@
               <%= f.select :comment_id, Comment.all.collect { |c| [c.comment_description, c.id]},
                 { include_blank: true, default: nil } %>
             </div>
-              <div class="col-md-12">
-                <%= f.text_area :text_comment %>
-              </div>
-        </div> <!-- row -->
+            <div class="col-md-12">
+              <%= f.text_area :text_comment %>
+            </div>
+          </div> <!-- row -->
         </div>
-         <div class="panel-footer text-right">
+        <div class="panel-footer text-right">
           <%= f.submit "Create Container Log", class: "btn btn-primary" %>
           <%= link_to "Cancel", containers_path, class: "btn btn-danger" %>
         </div>
-        <% end %>
       </div>
+    <% end %>
 	</div> 
 </div> 
